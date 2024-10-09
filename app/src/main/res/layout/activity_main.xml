@@ -1,0 +1,208 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Pantalla para mostrar los resultados -->
+    <EditText
+        android:id="@+id/display"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:text="0"
+        android:textSize="36sp"
+        android:gravity="end|center_vertical"
+        android:padding="16dp"
+        android:inputType="none"
+        android:enabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp" />
+
+    <!-- Primera fila de botones: 7, 8, 9, ÷ -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button7"
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="90dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="60dp"
+        android:onClick="numeroPulsado"
+        android:text="7"
+        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button8"
+        style="@style/CalculatorButtonStyle"
+        android:layout_width="85dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:onClick="numeroPulsado"
+        android:text="8"
+        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintStart_toEndOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/display" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button9"
+        style="@style/CalculatorButtonStyle"
+        android:text="9"
+        android:layout_height="100dp"
+        android:onClick="numeroPulsado"
+        app:layout_constraintTop_toBottomOf="@+id/display"
+        app:layout_constraintStart_toEndOf="@+id/button8"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDivide"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDivide"
+        style="@style/CalculatorButtonStyle_Operation"
+        android:text="÷"         android:layout_height="100dp"
+
+        android:onClick="operacionPulsada"
+        app:layout_constraintTop_toBottomOf="@+id/display"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"/>
+
+    <!-- Segunda fila de botones: 4, 5, 6, × -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button4"
+        style="@style/CalculatorButtonStyle"
+        android:text="4"        android:layout_height="100dp"
+
+        android:onClick="numeroPulsado"
+        app:layout_constraintTop_toBottomOf="@+id/button7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button5"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button5"
+        style="@style/CalculatorButtonStyle"
+        android:text="5"        android:layout_height="100dp"
+
+        android:onClick="numeroPulsado"
+        app:layout_constraintTop_toBottomOf="@+id/button8"
+        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/button6"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button6"
+        style="@style/CalculatorButtonStyle"
+        android:text="6"        android:layout_height="100dp"
+
+        android:onClick="numeroPulsado"
+        app:layout_constraintTop_toBottomOf="@+id/button9"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMultiply"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonMultiply"
+        style="@style/CalculatorButtonStyle_Operation"
+        android:text="×"          android:layout_height="100dp"
+
+        android:onClick="operacionPulsada"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDivide"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"/>
+
+    <!-- Tercera fila de botones: 1, 2, 3, - -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button1"
+        style="@style/CalculatorButtonStyle"
+        android:text="1"        android:layout_height="100dp"
+
+        android:onClick="numeroPulsado"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button2"
+        style="@style/CalculatorButtonStyle"
+        android:text="2"        android:layout_height="100dp"
+
+        android:onClick="numeroPulsado"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button3"
+        style="@style/CalculatorButtonStyle"
+        android:text="3"        android:layout_height="100dp"
+
+        android:onClick="numeroPulsado"
+        app:layout_constraintTop_toBottomOf="@+id/button6"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSubtract"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSubtract"
+        style="@style/CalculatorButtonStyle_Operation"
+        android:text="-"         android:layout_height="100dp"
+
+        android:onClick="operacionPulsada"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMultiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"/>
+
+    <!-- Cuarta fila de botones: 0, =, + -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button0"
+        style="@style/CalculatorButtonStyle"
+        android:text="0"         android:layout_height="100dp"
+
+        android:onClick="numeroPulsado"
+        app:layout_constraintTop_toBottomOf="@+id/button1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEquals"
+        android:layout_margin="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonEquals"
+        style="@style/CalculatorButtonStyle_Operation"
+        android:layout_width="83dp"
+        android:layout_height="206dp"
+        android:layout_margin="10dp"
+        android:onClick="calcular"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="@+id/buttonReset"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAdd"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAdd"
+        style="@style/CalculatorButtonStyle_Operation"
+        android:text="+"        android:layout_height="100dp"
+
+        android:onClick="operacionPulsada"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSubtract"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"/>
+
+    <!-- Botón de reset (C) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonReset"
+        style="@style/CalculatorButtonStyle_Reset"
+        android:text="C"         android:layout_height="100dp"
+
+        android:onClick="resetear"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
